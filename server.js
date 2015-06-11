@@ -26,6 +26,3 @@ var handleRequest = function (request, response) {
 setInterval(statusCodeFunc, 1000);
 setInterval(requestTime, 1000);
 
-var server = http.createServer(handleRequest);
-server.listen(1337);
-console.log("Listening on port 1337");
