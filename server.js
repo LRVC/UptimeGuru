@@ -1,4 +1,10 @@
-var http = require('http')
+var http = require('http'),
+		express = require('express'),
+		path = require('path'),
+		app = express();
+	
+
+app.use(express.static(path.join(__dirname, './www')));
 
 var statusCodeVar;
 function requestTime() {
@@ -17,12 +23,9 @@ function statusCodeFunc() {
 	});
 }
 
-var handleRequest = function (request, response) {
-	response.writeHead(200, { 'content-type': 'text/plain'});
-	response.write("Test");
-	response.end();
-};
-
 setInterval(statusCodeFunc, 1000);
 setInterval(requestTime, 1000);
 
+var server = app.listen(3000, function () {
+  console.log('Example app listening at http:3000');
+});
