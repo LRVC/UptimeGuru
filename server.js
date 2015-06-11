@@ -1,8 +1,11 @@
 var React = require('react');
-var http = require('http'),
+
+var http = require('http').Server(app),
+		httpRequests = require('http'),
 		express = require('express'),
 		path = require('path'),
-		app = express();
+		app = require('express')(),
+		io = require('socket.io')(http)
 	
 
 app.use(express.static(path.join(__dirname, './www')));
@@ -10,13 +13,13 @@ app.use(express.static(path.join(__dirname, './www')));
 var statusCodeVar;
 function requestTime() {
 	var start = new Date();
-	http.get("http://www.google.com/index.html", function(res) {
+	httpRequests.get("http://www.google.com/index.html", function(res) {
 		//console.log('Request took:', new Date() - start, 'ms');
 	});
 }
 
 function statusCodeFunc() {
-		http.get("http://www.google.com/index.html", function(res) {
+		httpRequests.get("http://www.google.com/index.html", function(res) {
   	statusCodeVar = res.statusCode;
   	//console.log("Got response: " + res.statusCode);
 	}).on('error', function(e) {
