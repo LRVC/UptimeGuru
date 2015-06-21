@@ -1,0 +1,27 @@
+body {
+	background: ##e7e7e7;
+}
+
+h1 {
+	color: #0f0e0e;
+	text-align: center;
+	font-size: 145px;
+	font-family: "comic andy";
+	margin: 0px 0px 0px 0px;
+}
+
+p.banner-description {
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 25px;
+	font-family: "alba";
+}
+
+.responseTime {
+	font-size: 45px;
+	font-family: "alba";
+}
+
+.okay {
+	color: green;
+}

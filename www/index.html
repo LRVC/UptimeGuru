@@ -3,12 +3,21 @@
 <head>
   <title>UptimeGuru</title>
   <link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./css/epoch.min.css">
   <meta charset="utf-8">
+  <script src="/socket.io/socket.io.js"></script>
   <script src="https://fb.me/react-0.13.3.js"></script>
   <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
-  <script type="text/jsx" src="js/app.js"></script>
+  <script type="text/jsx" src="./js/app.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="./js/epoch.min.js"></script>
 </head>
 <body>
-	<h1> UptimeGuru </h1>
+	<div> 
+		<h1>UptimeGuru</h1>
+		<p class="banner-description"> Real time app monitoring <p>
+	</div> 
 	<div id="main"></div>
+  <div id="area" class="epoch category10" style="height: 200px;"></div>
 </body>

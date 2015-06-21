@@ -1,35 +1,28 @@
 var React = require('react');
+var http = require('http');
+var express = require('express');
+var app = express();
+var server = app.listen(3000);
+var path = require('path');
+var rd3 = require('react-d3');
+var LineChart = require("react-chartjs").Line;
 
-var http = require('http').Server(app),
-		httpRequests = require('http'),
-		express = require('express'),
-		path = require('path'),
-		app = require('express')(),
-		io = require('socket.io')(http)
-	
+var io = require('socket.io').listen(server);
+
 
 app.use(express.static(path.join(__dirname, './www')));
 
-var statusCodeVar;
-function requestTime() {
-	var start = new Date();
-	httpRequests.get("http://www.google.com/index.html", function(res) {
-		//console.log('Request took:', new Date() - start, 'ms');
-	});
-}
+io.on('connection', function(socket) {
+	console.log('connected');
 
-function statusCodeFunc() {
-		httpRequests.get("http://www.google.com/index.html", function(res) {
-  	statusCodeVar = res.statusCode;
-  	//console.log("Got response: " + res.statusCode);
-	}).on('error', function(e) {
-  	console.log("Got error: " + e.message);
-	});
-}
-
-setInterval(statusCodeFunc, 1000);
-setInterval(requestTime, 1000);
-
-var server = app.listen(3000, function () {
-  console.log('Example app listening at http:3000');
+	setInterval(function() {
+		var start = new Date();
+		var url = "digitalcomicshopper.ninja" 
+		http.get("http://" + url, function(res) {
+  		var time = (new Date() - start);
+  		socket.emit('response', {responseTime: time, statusCode: res.statusCode, url: url});
+		}).on('error', function(e) {
+  		console.log("Got error: " + e.message);
+		});
+	},1000)
 });
