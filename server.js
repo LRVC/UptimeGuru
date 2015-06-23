@@ -15,7 +15,7 @@ io.on('connection', function(socket) {
 	setInterval(function() {
 		var start = new Date();
 		var url = "digitalcomicshopper.ninja" 
-		http.get("https://" + url, function(res) {
+		http.get("http://" + url, function(res) {
   		var time = (new Date() - start);
   		socket.emit('response', {responseTime: time, statusCode: res.statusCode, url: url});
 		}).on('error', function(e) {
