@@ -1,11 +1,8 @@
-var React = require('react');
 var http = require('http');
 var express = require('express');
 var app = express();
 var server = app.listen(3000);
 var path = require('path');
-var rd3 = require('react-d3');
-var LineChart = require("react-chartjs").Line;
 
 var io = require('socket.io').listen(server);
 
