@@ -1,7 +1,7 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-var server = app.listen((process.env.PORT || 3000));
+var server = app.listen(process.env.PORT || 3000);
 var path = require('path');
 
 var io = require('socket.io').listen(server);
@@ -28,7 +28,7 @@ io.on('connection', function(socket) {
 		var url = "www.reddit.com";
 		http.get("http://" + url, function(res) {
 			var time = (new Date() - start);
-			socket.emit('responseReddit', {responseTime: time, statusCode: res.statusCode, url: url});
+			socket.emit('responseTwo', {responseTime: time, statusCode: res.statusCode, url: url});
 		}).on('error', function(e) {
 			console.log("Error: " + e.message)
 		})

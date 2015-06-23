@@ -2,7 +2,7 @@ var socket = io.connect();
 
 var ComicNinja = React.createClass({
   getInitialState: function() {
-    return {perMinute: '-', perDay: '-'};
+    return {};
   },
   componentDidMount: function() {
     socket.on('response', this.setState.bind(this));
@@ -21,12 +21,12 @@ var ComicNinja = React.createClass({
   }
 });
 
-var Reddit = React.createClass({
+var MapApp = React.createClass({
   getInitialState: function() {
-    return {perMinute: '-', perDay: '-'};
+    return {};
   },
   componentDidMount: function() {
-    socket.on('responseReddit', this.setState.bind(this));
+    socket.on('responseTwo', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -46,7 +46,7 @@ var MyComponent = React.createClass({
 		return (
 		<div>
 			<ComicNinja />
-			<Reddit />
+			<MapApp />
 		</div>
 		)
 	}
