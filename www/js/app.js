@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('https://localhost:3000');
 socket.on('response', renderOrUpdateResponse);
 
 var ResponseTime = React.createClass({
