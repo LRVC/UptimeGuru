@@ -25,8 +25,8 @@ io.on('connection', function(socket) {
 
 	setInterval(function() {
 		var start = new Date();
-		var url = "www.reddit.com";
-		http.get("http://" + url, function(res) {
+		var url = "http://thelearnersguild.herokuapp.com/";
+		http.get("http://thelearnersguild.herokuapp.com/", function(res) {
 			var time = (new Date() - start);
 			socket.emit('responseTwo', {responseTime: time, statusCode: res.statusCode, url: url});
 		}).on('error', function(e) {

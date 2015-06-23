@@ -13,15 +13,15 @@ var ComicNinja = React.createClass({
 		var url = this.state.url || '-';
     return (
       <div>
-				<h2><strong>{url}</strong></h2>
+				<h2><strong>Digital Comic Shopper</strong></h2>
 					<p> Response Time: {responseTime} ms</p>
-					<p className="okay"> {statusCode} </p>
+					<p id={(statusCode === 200) ? 'okay' : 'fail'}> {statusCode} </p>
 			</div>
     );
   }
 });
 
-var MapApp = React.createClass({
+var LearnersGuild = React.createClass({
   getInitialState: function() {
     return {};
   },
@@ -34,9 +34,9 @@ var MapApp = React.createClass({
 		var url = this.state.url || '-';
     return (
       <div>
-				<h2><strong>{url}</strong></h2>
+				<h2><strong>The Learners Guild</strong></h2>
 					<p> Response Time: {responseTime} ms</p>
-					<p className="okay"> {statusCode} </p>
+					<p id={(statusCode === 200) ? 'okay' : 'fail'}> {statusCode} </p>
 			</div>
     );
   }
@@ -46,7 +46,7 @@ var MyComponent = React.createClass({
 		return (
 		<div>
 			<ComicNinja />
-			<MapApp />
+			<LearnersGuild />
 		</div>
 		)
 	}

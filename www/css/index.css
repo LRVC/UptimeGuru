@@ -22,6 +22,10 @@ p.banner-description {
 	font-family: "alba";
 }
 
-.okay {
+#okay {
 	color: green;
+}
+
+#fail {
+	color: red;
 }
