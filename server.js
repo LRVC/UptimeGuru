@@ -28,7 +28,7 @@ io.on('connection', function(socket) {
 		var url = "www.reddit.com";
 		http.get("http://" + url, function(res) {
 			var time = (new Date() - start);
-			socket.emit('responseTwo', {responseTime: time, statusCode: res.statusCode, url: url});
+			socket.emit('responseReddit', {responseTime: time, statusCode: res.statusCode, url: url});
 		}).on('error', function(e) {
 			console.log("Error: " + e.message)
 		})
