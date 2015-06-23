@@ -14,12 +14,23 @@ io.on('connection', function(socket) {
 
 	setInterval(function() {
 		var start = new Date();
-		var url = "digitalcomicshopper.ninja" 
+		var url = "digitalcomicshopper.ninja"; 
 		http.get("http://" + url, function(res) {
   		var time = (new Date() - start);
   		socket.emit('response', {responseTime: time, statusCode: res.statusCode, url: url});
 		}).on('error', function(e) {
-  		console.log("Got error: " + e.message);
+  		console.log("Error: " + e.message);
 		});
+	},1000)
+
+	setInterval(function() {
+		var start = new Date();
+		var url = "www.reddit.com";
+		http.get("http://" + url, function(res) {
+			var time = (new Date() - start);
+			socket.emit('responseTwo', {responseTime: time, statusCode: res.statusCode, url: url});
+		}).on('error', function(e) {
+			console.log("Error: " + e.message)
+		})
 	},1000)
 });
