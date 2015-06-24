@@ -33,4 +33,17 @@ io.on('connection', function(socket) {
 			console.log("Error: " + e.message)
 		})
 	},1000)
+
+	setInterval(function() {
+		var start = new Date();
+		var url = "http://therapyfixx.com";
+		http.get("http://therapyfixx.com", function(res) {
+			var time = (new Date() - start);
+			socket.emit('responseThree', {responseTime: time, statusCode: res.statusCode, url: url});
+		}).on('error', function(e) {
+			console.log("Error: " + e.message)
+		})
+	},1000)
 });
+
+

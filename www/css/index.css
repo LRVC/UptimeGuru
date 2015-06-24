@@ -22,10 +22,25 @@ p.banner-description {
 	font-family: "alba";
 }
 
+#comicShopper {
+	font-family: sans-serif;
+	font-size: 35px;
+}
+
+#learnersGuild {
+	font-family: fantasy;
+	font-size: 35px;
+}
+
+#therapyFixx {
+	font-family: 'Days One', sans-serif;
+	font-size: 35px;
+}
+
 #okay {
-	color: green;
+	color: #0ad240;
 }
 
 #fail {
-	color: red;
+	color: #f03838;
 }
