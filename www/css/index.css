@@ -38,7 +38,22 @@ p.banner-description {
 }
 
 #quizRacer {
-	font-family: 'News Cycle'
+	font-family: 'News Cycle';
+	font-size: 35px;
+}
+
+#briskLyfe {
+	font-family: 'lucida-grande';
+	font-size: 35px;
+}
+
+#journalWithClarity {
+	font-family: 'Allura', cursive;
+	font-size: 35px;
+}
+
+#rentalRater {
+	font-family: fantasy;
 	font-size: 35px;
 }
 
