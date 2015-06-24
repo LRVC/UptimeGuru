@@ -100,6 +100,17 @@ io.on('connection', function(socket) {
 		})
 	},1000)
 
+	setInterval(function() {
+		var start = new Date();
+		var url = "http://www.belp-it.com";
+		http.get("http://www.belp-it.com", function(res) {
+			var time = (new Date() - start);
+			socket.emit('responseNine', {responseTime: time, statusCode: res.statusCode, url: url});
+		}).on('error', function(e) {
+			console.log("Error: " + e.message)
+		})
+	},1000)
+
 });
 
 

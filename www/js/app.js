@@ -168,6 +168,27 @@ var WordsWithCharles = React.createClass({
   }
 });
 
+var Belp = React.createClass({
+  getInitialState: function() {
+    return {};
+  },
+  componentDidMount: function() {
+    socket.on('responseNine', this.setState.bind(this));
+  },
+  render: function() {
+    var responseTime = this.state.responseTime || '-';
+    var statusCode = this.state.statusCode || '-';
+    var url = this.state.url || '-';
+    return (
+      <div className="col-1-3">
+        <h2 id="belp"><a href={url}><strong>BELP</strong></a></h2>
+          <p> Response Time: {responseTime} ms</p>
+          <p id={(statusCode === 200) ? 'okay' : 'fail'}>HTTP Status Code: {statusCode} </p>
+      </div>
+    );
+  }
+});
+
 var MyComponent = React.createClass({
 	render: function() {
 		return (
@@ -180,6 +201,7 @@ var MyComponent = React.createClass({
       <JournalWithClarity />
       <RentalRater />
       <WordsWithCharles />
+      <Belp />
 		</div>
 		)
 	}

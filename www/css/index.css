@@ -74,6 +74,12 @@ p.banner-description {
   padding-top: 20px;
 }
 
+#belp {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-bottom: 20px;
+  padding-top: 20px;
+}
+
 #okay {
 	color: #0ad240;
 }
