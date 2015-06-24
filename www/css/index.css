@@ -63,6 +63,17 @@ p.banner-description {
 	text-decoration: none;
 }
 
+#wordsWithCharles {
+	color: #424242 ;
+ 	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+  letter-spacing:0.1em;
+  line-height: 145%;
+  font-size: 18pt;
+  font-variant: small-caps;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
 #okay {
 	color: #0ad240;
 }

@@ -147,6 +147,27 @@ var RentalRater = React.createClass({
   }
 });
 
+var WordsWithCharles = React.createClass({
+  getInitialState: function() {
+    return {};
+  },
+  componentDidMount: function() {
+    socket.on('responseEight', this.setState.bind(this));
+  },
+  render: function() {
+    var responseTime = this.state.responseTime || '-';
+    var statusCode = this.state.statusCode || '-';
+    var url = this.state.url || '-';
+    return (
+      <div className="col-1-3">
+        <h2 id="wordsWithCharles"><a href={url}><strong>Words With Charles</strong></a></h2>
+          <p> Response Time: {responseTime} ms</p>
+          <p id={(statusCode === 200) ? 'okay' : 'fail'}>HTTP Status Code: {statusCode} </p>
+      </div>
+    );
+  }
+});
+
 var MyComponent = React.createClass({
 	render: function() {
 		return (
@@ -158,6 +179,7 @@ var MyComponent = React.createClass({
       <BriskLyfe />
       <JournalWithClarity />
       <RentalRater />
+      <WordsWithCharles />
 		</div>
 		)
 	}

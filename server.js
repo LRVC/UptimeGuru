@@ -89,6 +89,17 @@ io.on('connection', function(socket) {
 		})
 	},1000)
 
+	setInterval(function() {
+		var start = new Date();
+		var url = "http://wordswithcharles.herokuapp.com";
+		http.get("http://wordswithcharles.herokuapp.com", function(res) {
+			var time = (new Date() - start);
+			socket.emit('responseEight', {responseTime: time, statusCode: res.statusCode, url: url});
+		}).on('error', function(e) {
+			console.log("Error: " + e.message)
+		})
+	},1000)
+
 });
 
 
