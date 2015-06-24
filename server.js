@@ -44,6 +44,17 @@ io.on('connection', function(socket) {
 			console.log("Error: " + e.message)
 		})
 	},1000)
+
+	setInterval(function() {
+		var start = new Date();
+		var url = "http://www.g7quizracer.com/";
+		http.get("http://www.g7quizracer.com/", function(res) {
+			var time = (new Date() - start);
+			socket.emit('responseFour', {responseTime: time, statusCode: res.statusCode, url: url});
+		}).on('error', function(e) {
+			console.log("Error: " + e.message)
+		})
+	},1000)
 });
 
 
