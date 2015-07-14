@@ -9,13 +9,71 @@ var io = require('socket.io').listen(server);
 
 app.use(express.static(path.join(__dirname, './www')));
 
-io.on('connection', function(socket) {
-	console.log('connected');
+// io.on('connection', function(socket) {
+	
+// 	console.log('connected');
 
-	// setInterval(function() {
+// 	var urlArray = [  "http://digitalcomicshopper.ninja",
+// 											"http://thelearnersguild.herokuapp.com/",
+// 											"http://therapyfixx.com",
+// 											"http://www.g7quizracer.com/",
+// 											"https://hidden-retreat-5290.herokuapp.com/",
+// 											"http://journalwithclarity.com/",
+// 											"https://rentalrater.herokuapp.com/",
+// 											"http://wordswithcharles.herokuapp.com",
+// 											"http://www.belp-it.com"	];
+
+// 	setInterval(function() {
+// 		var url;
+// 		var start = new Date();
+// 		for(var i = 0; i < urlArray.length; i++) {
+// 			url = urlArray[i];
+// 			var time = (new Date() - start);
+// 			console.log('response' + i);
+// 			socket.emit('response' + i, {responseTime: i, statusCode: 200, url: url});
+// 		}
+// 	},1000)
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// setInterval(function() {
 	// 	var start = new Date();
-	// 	var url = "digitalcomicshopper.ninja"; 
-	// 	http.get("http://" + url, function(res) {
+	// 	var url = "http://digitalcomicshopper.ninja"; 
+	// 	http.get(url, function(res) {
  //  		var time = (new Date() - start);
  //  		socket.emit('response', {responseTime: time, statusCode: res.statusCode, url: url});
 	// 	}).on('error', function(e) {
@@ -26,7 +84,7 @@ io.on('connection', function(socket) {
 	// setInterval(function() {
 	// 	var start = new Date();
 	// 	var url = "http://thelearnersguild.herokuapp.com/";
-	// 	http.get("http://thelearnersguild.herokuapp.com/", function(res) {
+	// 	http.get(url, function(res) {
 	// 		var time = (new Date() - start);
 	// 		socket.emit('responseTwo', {responseTime: time, statusCode: res.statusCode, url: url});
 	// 	}).on('error', function(e) {
@@ -110,7 +168,5 @@ io.on('connection', function(socket) {
 	// 		console.log("Error: " + e.message)
 	// 	})
 	// },1000)
-
-});
 
 

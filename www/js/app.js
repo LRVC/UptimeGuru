@@ -5,7 +5,7 @@ var ComicNinja = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('response', this.setState.bind(this));
+    socket.on('response0', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -26,7 +26,7 @@ var LearnersGuild = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseTwo', this.setState.bind(this));
+    socket.on('response1', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -47,7 +47,7 @@ var TherapyFixx = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseThree', this.setState.bind(this));
+    socket.on('response2', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -68,7 +68,7 @@ var QuizRacer = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseFour', this.setState.bind(this));
+    socket.on('response3', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -89,7 +89,7 @@ var BriskLyfe = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseFive', this.setState.bind(this));
+    socket.on('response4', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -110,7 +110,7 @@ var JournalWithClarity = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseSix', this.setState.bind(this));
+    socket.on('response5', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -131,7 +131,7 @@ var RentalRater = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseSeven', this.setState.bind(this));
+    socket.on('response6', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -152,7 +152,7 @@ var WordsWithCharles = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseEight', this.setState.bind(this));
+    socket.on('response7', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -173,7 +173,7 @@ var Belp = React.createClass({
     return {};
   },
   componentDidMount: function() {
-    socket.on('responseNine', this.setState.bind(this));
+    socket.on('response8', this.setState.bind(this));
   },
   render: function() {
     var responseTime = this.state.responseTime || '-';
@@ -211,11 +211,3 @@ React.render(
 	<MyComponent />,
 	document.getElementById('main')
 )
-
-// function renderOrUpdateResponse(data) {
-// 	React.render(
-// 		<ResponseTime data={data} />,
-// 		document.getElementById('main')
-// 	)
-	
-// }
