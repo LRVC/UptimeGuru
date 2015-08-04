@@ -25,7 +25,7 @@ io.on('connection', function(socket) {
 
 		setInterval(function() {
 			var start = new Date();
-			var url = "http://thelearnersguild.herokuapp.com/";
+			var url = "http://www.reddit.com";
 			http.get(url, function(res) {
 				var time = (new Date() - start);
 				socket.emit('responseTwo', {responseTime: time, statusCode: res.statusCode, url: url});
@@ -36,8 +36,8 @@ io.on('connection', function(socket) {
 
 		setInterval(function() {
 			var start = new Date();
-			var url = "http://therapyfixx.com";
-			http.get("http://therapyfixx.com", function(res) {
+			var url = "http://www.google.com";
+			http.get("http://www.google.com", function(res) {
 				var time = (new Date() - start);
 				socket.emit('responseThree', {responseTime: time, statusCode: res.statusCode, url: url});
 			}).on('error', function(e) {
@@ -45,73 +45,7 @@ io.on('connection', function(socket) {
 			})
 		},1000)
 
-		setInterval(function() {
-			var start = new Date();
-			var url = "http://www.g7quizracer.com/";
-			http.get("http://www.g7quizracer.com/", function(res) {
-				var time = (new Date() - start);
-				socket.emit('responseFour', {responseTime: time, statusCode: res.statusCode, url: url});
-			}).on('error', function(e) {
-				console.log("Error: " + e.message)
-			})
-		},1000)
-
-		setInterval(function() {
-			var start = new Date();
-			var url = "https://hidden-retreat-5290.herokuapp.com/";
-			http.get("http://hidden-retreat-5290.herokuapp.com/", function(res) {
-				var time = (new Date() - start);
-				socket.emit('responseFive', {responseTime: time, statusCode: res.statusCode, url: url});
-			}).on('error', function(e) {
-				console.log("Error: " + e.message)
-			})
-		},1000)
-
-		setInterval(function() {
-			var start = new Date();
-			var url = "http://journalwithclarity.com/";
-			http.get("http://journalwithclarity.com/", function(res) {
-				var time = (new Date() - start);
-				socket.emit('responseSix', {responseTime: time, statusCode: res.statusCode, url: url});
-			}).on('error', function(e) {
-				console.log("Error: " + e.message)
-			})
-		},1000)
-
-		setInterval(function() {
-			var start = new Date();
-			var url = "https://rentalrater.herokuapp.com/";
-			http.get("http://rentalrater.herokuapp.com/", function(res) {
-				var time = (new Date() - start);
-				socket.emit('responseSeven', {responseTime: time, statusCode: res.statusCode, url: url});
-			}).on('error', function(e) {
-				console.log("Error: " + e.message)
-			})
-		},1000)
-
-		setInterval(function() {
-			var start = new Date();
-			var url = "http://wordswithcharles.herokuapp.com";
-			http.get("http://wordswithcharles.herokuapp.com", function(res) {
-				var time = (new Date() - start);
-				socket.emit('responseEight', {responseTime: time, statusCode: res.statusCode, url: url});
-			}).on('error', function(e) {
-				console.log("Error: " + e.message)
-			})
-		},1000)
-
-		setInterval(function() {
-			var start = new Date();
-			var url = "http://www.belp-it.com";
-			http.get("http://www.belp-it.com", function(res) {
-				var time = (new Date() - start);
-				socket.emit('responseNine', {responseTime: time, statusCode: res.statusCode, url: url});
-			}).on('error', function(e) {
-				console.log("Error: " + e.message)
-			})
-		},1000)
-});	
-
+ });	
 
 // 	var urlArray = [  "http://digitalcomicshopper.ninja",
 // 											"http://thelearnersguild.herokuapp.com/",
