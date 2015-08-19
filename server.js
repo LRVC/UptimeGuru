@@ -46,28 +46,3 @@ io.on('connection', function(socket) {
 		},1000)
 
  });	
-
-// 	var urlArray = [  "http://digitalcomicshopper.ninja",
-// 											"http://thelearnersguild.herokuapp.com/",
-// 											"http://therapyfixx.com",
-// 											"http://www.g7quizracer.com/",
-// 											"https://hidden-retreat-5290.herokuapp.com/",
-// 											"http://journalwithclarity.com/",
-// 											"https://rentalrater.herokuapp.com/",
-// 											"http://wordswithcharles.herokuapp.com",
-// 											"http://www.belp-it.com"	];
-
-// 	setInterval(function() {
-// 		var url;
-// 		var start = new Date();
-// 		for(var i = 0; i < urlArray.length; i++) {
-// 			url = urlArray[i];
-// 			var time = (new Date() - start);
-// 			console.log('response' + i);
-// 			socket.emit('response' + i, {responseTime: i, statusCode: 200, url: url});
-// 		}
-// 	},1000)
-// });
-
-
-
